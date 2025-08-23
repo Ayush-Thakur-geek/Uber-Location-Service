@@ -6,7 +6,7 @@ plugins {
 
 group = 'com.uber'
 version = '0.0.1-SNAPSHOT'
-description = 'Demo project for Spring Boot'
+description = 'A service to handle location based requests.'
 
 java {
 	toolchain {
@@ -22,18 +22,20 @@ configurations {
 
 repositories {
 	mavenCentral()
+    mavenLocal()
 }
 
 dependencies {
 	implementation 'org.springframework.boot:spring-boot-starter-data-redis'
 	implementation 'org.springframework.boot:spring-boot-starter-web'
+    implementation 'redis.clients:jedis:6.0.0'
 	compileOnly 'org.projectlombok:lombok'
 	developmentOnly 'org.springframework.boot:spring-boot-devtools'
 	annotationProcessor 'org.springframework.boot:spring-boot-configuration-processor'
 	annotationProcessor 'org.projectlombok:lombok'
 	testImplementation 'org.springframework.boot:spring-boot-starter-test'
 	testRuntimeOnly 'org.junit.platform:junit-platform-launcher'
-    implementation 'com.uber:UberEntityService:0.0.2-SNAPSHOT'
+//    implementation 'com.uber:UberEntityService:0.0.2-SNAPSHOT'
 }
 
 tasks.named('test') {
