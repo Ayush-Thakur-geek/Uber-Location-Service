@@ -4,18 +4,11 @@ import com.uber.UberLocationService.dtos.DriverLocationDTO;
 import com.uber.UberLocationService.dtos.NearByDriverRequestDTO;
 import com.uber.UberLocationService.dtos.SaveDriverLocationRequestDTO;
 import com.uber.UberLocationService.service.LocationService;
-import com.uber.UberLocationService.service.RedisLocationServiceImpl;
-import org.springframework.data.geo.*;
-import org.springframework.data.redis.connection.RedisGeoCommands;
-import org.springframework.data.redis.core.GeoOperations;
-import org.springframework.data.redis.core.StringRedisTemplate;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
-import java.util.ArrayList;
 import java.util.List;
-import java.util.stream.Collectors;
 
 @RestController
 @RequestMapping("/api/v1/location")
