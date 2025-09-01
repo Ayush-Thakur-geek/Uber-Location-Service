@@ -10,7 +10,7 @@ description = 'A service to handle location based requests.'
 
 java {
 	toolchain {
-		languageVersion = JavaLanguageVersion.of(21)
+		languageVersion = JavaLanguageVersion.of(24)
 	}
 }
 
@@ -23,12 +23,15 @@ configurations {
 repositories {
 	mavenCentral()
     mavenLocal()
+    maven { url "https://repo.spring.io/release" }
 }
 
 dependencies {
 	implementation 'org.springframework.boot:spring-boot-starter-data-redis'
 	implementation 'org.springframework.boot:spring-boot-starter-web'
     implementation 'redis.clients:jedis:6.0.0'
+    // https://mvnrepository.com/artifact/org.springframework.cloud/spring-cloud-starter-netflix-eureka-client
+    implementation("org.springframework.cloud:spring-cloud-starter-netflix-eureka-client:4.3.0")
 	compileOnly 'org.projectlombok:lombok'
 	developmentOnly 'org.springframework.boot:spring-boot-devtools'
 	annotationProcessor 'org.springframework.boot:spring-boot-configuration-processor'
